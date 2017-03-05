@@ -1,0 +1,8 @@
+<p>
+  entry-list works!
+</p>
+<div *ngFor="let journal of journals">
+  <a [routerLink]="['/home/', journal._id]">
+  <p>{{journal.title}}</p></a>
+  <span>| {{journal.date }}</span>
+</div>
