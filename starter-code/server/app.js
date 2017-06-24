@@ -14,6 +14,8 @@ mongoose.connect('mongodb://localhost/journal-development');
 
 const app = express();
 
+app.use(cors());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -33,7 +35,7 @@ app.use(layouts);
 
 
 const index = require('./routes/index');
-//const index = require('./routes/api/journal-entries');
+//const apiroute = require('./routes/');
 //const journalEntries = require('./routes/api/journal-entries');
 //const prueba =require('/prueba');
 

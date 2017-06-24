@@ -3,10 +3,18 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var JournalSchema = new Schema({
-  title:    String,
-  content:  String,
-  date:     { type: Date, default: Date.now },
-
+  title: {
+    type: String,
+    required: [true, "Title is required"]
+  },
+  content: {
+    type: String,
+    required: [true, "Content is required"]
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 const JournalEntry = mongoose.model('JournalEntry',JournalSchema);
