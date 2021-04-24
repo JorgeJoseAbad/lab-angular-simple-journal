@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { EntryListComponent } from './entry-list/entry-list.component';
 import { Routes, RouterModule } from "@angular/router";
 import { SingleEntryComponent } from './single-entry/single-entry.component';
+import { NewEntryComponent } from './new-entry/new-entry.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home',  component: EntryListComponent },
-  { path: 'home/:id', component : SingleEntryComponent}
+  { path: 'home/:id', component : SingleEntryComponent},
+  { path: 'new', component : NewEntryComponent}
 
 ];
 
@@ -20,7 +22,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     EntryListComponent,
-    SingleEntryComponent
+    SingleEntryComponent,
+    NewEntryComponent
   ],
   imports: [
     BrowserModule,

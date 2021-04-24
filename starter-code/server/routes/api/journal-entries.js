@@ -10,7 +10,7 @@ router.get('/journal-entries', function (req, res, next) {
   JournalEntry.find({}, function (err, journal) {
     if (err) return res.json(err).status(500);
     console.log("in journalentry");
-    return res.json(journal);
+    return res.json(journal).status(200);
   });
 });
 
@@ -32,7 +32,7 @@ router.get('/api/journal-entries/:title', function (req, res, next) {
 });
 
 router.post('/journal-entries', (req, res, next) => {
-  const newEntry = new Entry({
+  const newEntry = new JournalEntry({
     title: req.body.title,
     content: req.body.content
   });
@@ -40,7 +40,7 @@ router.post('/journal-entries', (req, res, next) => {
   newEntry.save( (err) => {
     if (err)             { return res.status(500).json(err); }
     if (newEntry.errors) { return res.status(400).json(newEntry); }
-                           return res.json(newEntry);
+    return res.json(newEntry);
   });
 });
 

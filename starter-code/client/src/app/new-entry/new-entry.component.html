@@ -1,0 +1,14 @@
+
+<h1> Signup </h1>
+<form (ngSubmit)="addEntry(myForm)" #myForm="ngForm">
+
+  <label> Title </label>
+  <input type="text" [(ngModel)]="title" name="title"/>
+
+  <label> Content </label>
+  <input type="text" [(ngModel)]="content" name="content"/>
+
+  <button type="submit"> Send new Entry </button>
+
+</form>
+<p class="error"> {{ error }} </p>
