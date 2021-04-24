@@ -10,7 +10,10 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 var cors         = require('cors');
 
-mongoose.connect('mongodb://localhost/journal-development');
+mongoose.connect('mongodb://localhost/journal-development',{
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 const app = express();
 
